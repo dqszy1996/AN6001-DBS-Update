@@ -14,9 +14,9 @@ def index():
         if request.method == "POST":
             rates = float(request.form.get("rates"))
             print(rates)
-            model1 = joblib.load("regression DBS")
+            model1 = joblib.load("regression_DBS")
             r1 = model1.predict([[rates]])
-            model2 = joblib.load("tree DBS")
+            model2 = joblib.load("tree_DBS")
             r2 = model2.predict([[rates]])
             return(render_template("index.html", result1=r1, result2=r2))
         else:
